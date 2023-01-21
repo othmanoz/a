@@ -22,7 +22,8 @@
 
     submitBtn.addEventListener("click", () => {
       const word = input.value;
-      output.innerHTML = predictGroup(word);
+      const predictedGroup = predictGroup(word);
+      output.innerHTML = "The word '" + word + "' belongs to group " + predictedGroup;
     });
   </script>
   <h1>ML Model Hosted on GitHub Pages</h1>
