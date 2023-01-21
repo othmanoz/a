@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    body {
-      background-color: #f2f2f2;
-    }
-    h1 {
-      font-size: 48px;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 50px;
-      color: #333;
-    }
-  </style>
+  <title>ML Model Hosted on GitHub Pages</title>
 </head>
 <body>
-  <h1>othmanOZ</h1>
+  <script>
+    const groups = { A: ["lacost", "nike"], B: ["computer"], C: ["styding"] };
+
+    const predictGroup = (word) => {
+      for (const group in groups) {
+        if (groups[group].includes(word)) {
+          return group;
+        }
+      }
+      return "Unable to predict group for given word";
+    };
+
+    const input = document.getElementById("input-word");
+    const output = document.getElementById("output-group");
+    const submitBtn = document.getElementById("submit-btn");
+
+    submitBtn.addEventListener("click", () => {
+      const word = input.value;
+      output.innerHTML = predictGroup(word);
+    });
+  </script>
+  <h1>ML Model Hosted on GitHub Pages</h1>
+  <label for="input-word">Enter a word:</label>
+  <input type="text" id="input-word">
+  <button id="submit-btn">Submit</button>
+  <div id="output-group"></div>
 </body>
 </html>
